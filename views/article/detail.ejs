@@ -1,0 +1,36 @@
+<h2> <%= article.title %> </h2>
+
+<div>
+    Content: <%= article.content %>
+</div>
+
+<div>
+    Is Published: <%= article.isPublished %>
+</div>
+
+<div>
+    Total Words: <%= article.totalWords %>
+</div>
+
+<div>
+    Author: <%= article.author.name %>
+</div>
+
+<div>
+    Created At: <%= moment(article.createdAt).fromNow() %>
+</div>
+
+<div>
+    Updated At: <%= moment(article.updatedAt).fromNow() %>
+</div>
+
+<% article.author.forEach(function(author){ %>
+    <hr>
+  
+    <div class="author"> 
+    <div>Written By: <%= author.name %></div>
+    <div>Email Address: <%= author.emailAddress %></div>
+    <div>Phone Number: <%= author.phoneNumber %></div>
+    <div> Author Created on: <%= moment(author.createdAt).fromNow() %></div>
+  </div>
+      <% }) %>

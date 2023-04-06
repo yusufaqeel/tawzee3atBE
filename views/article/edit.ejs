@@ -1,0 +1,33 @@
+<h1> Edit Article </h1>
+
+<form method="POST" action="/article/update?_method=PUT">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" value="<%= article.title %>"  class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Content</label>
+        <input type="text" name="content" value="<%= article.content %>"  class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Is Published</label>
+        <input type="text" name="isPublished" value="<%= article.isPublished %>"  class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Total Words</label>
+        <input type="text" name="totalWords" value="<%= article.totalWords %>"  class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Author</label>
+        <input type="text" name="author" value="<%= article.author %>"  class="form-control">
+    </div>
+
+    <input type="hidden" name="id" value="<%= article._id %>"  class="form-control">
+    <br>
+    <button type="submit" class="btn btn-primary">Update Article</button>
+
+</form>

@@ -1,0 +1,39 @@
+<h1> Add Article </h1>
+
+<form method="POST" action="/article/add">
+
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Content</label>
+        <input type="text" name="content" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>isPublished</label>
+        <input type="text" name="isPublished" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Total Words</label>
+        <input type="text" name="totalWords" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Author</label>
+        <select name="author[]" multiple="multiple" class="form-control">
+            <% authors.forEach(function(author){ %>
+            
+                <option value="<%= author._id %>"><%= author.name %></option>
+            
+            <% }) %>
+        </select>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary">Create Article</button>
+
+</form>
