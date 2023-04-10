@@ -18,12 +18,12 @@ const itemCntrl = require("../controllers/item");
 router.get("/item/add", itemCntrl.item_create_get);
 router.post("/item/add", itemCntrl.item_create_post);
 
-router.get("/author/index", authorCntrl.author_index_get);
-router.get("/author/detail", authorCntrl.author_show_get);
+router.get("/item/index", itemCntrl.item_index_get);
+router.get("/item/detail", itemCntrl.item_show_get);
 
-router.get("/author/edit", authorCntrl.author_edit_get);
-router.put("/author/update", authorCntrl.author_update_put);
+router.get("/item/edit", itemCntrl.item_edit_get);
+router.put("/item/update", itemCntrl.item_update_put);
 
-router.delete("/author/delete", authorCntrl.author_delete_get);
+router.delete("/item/delete", itemCntrl.item_delete_get);
 
 module.exports = router;

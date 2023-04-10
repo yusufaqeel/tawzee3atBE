@@ -36,7 +36,7 @@ exports.item_create_post = (req, res) => {
 }
 
 // HTTP GET - Item by ID
-exports.Item_show_get = (req, res) => {
+exports.item_show_get = (req, res) => {
     console.log(req.query.id);
     Item.findById(req.query.id)
     .then(item => {
@@ -70,11 +70,11 @@ exports.item_update_put = (req, res) => {
     });
 }
 
-  // HTTP DELETE -  Author
+  // HTTP DELETE -  Item
   exports.item_delete_get = (req, res) => {
     console.log(req.query.id);
     Item.findByIdAndDelete(req.query.id)
-    .then((author)=>{
+    .then((Item)=>{
         res.json({item})
     })
     .catch(err => {

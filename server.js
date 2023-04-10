@@ -46,12 +46,14 @@ const indexRoute = require('./routes/index');
 const articleRoute = require('./routes/articles');
 const authorRoute = require('./routes/authors');
 const authRoute = require('./routes/auth');
+const itemRoute = require('./routes/items');
 
 // Mount Routes
 app.use('/', indexRoute);
 app.use('/', articleRoute);
 app.use('/', authorRoute);
 app.use('/', authRoute);
+app.use('/', itemRoute);
 
 // Node.js to look in a folder views for all the ejs files.
 app.set("view engine", "ejs");
