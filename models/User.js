@@ -15,41 +15,44 @@ const userSchema = mongoose.Schema({
         minlength: [3, "Last name must be more than 3 characters"],
         maxlength: [99, "This is too much man..... Chill!!!"]
     },
-    phoneNumber: {
-        type: String,
-        required: true,
-        minlength: [3, "Last name must be more than 3 characters"],
-        maxlength: [10, "This is too much man..... Chill!!!"]
-    },
-    block: {
-        type: String,
-        required: true,
-        minlength: [3, "Last name must be more than 3 characters"],
-        maxlength: [10, "This is too much man..... Chill!!!"]
-    },
-    street: {
-        type: String,
-        required: true,
-        minlength: [3, "Last name must be more than 3 characters"],
-        maxlength: [10, "This is too much man..... Chill!!!"]
-    },
-    house: {
-        type: String,
-        required: true,
-        minlength: [3, "Last name must be more than 3 characters"],
-        maxlength: [10, "This is too much man..... Chill!!!"]
-    },
+    
     emailAddress: {
         type: String,
         required: true,
         lowercase:true,
         unique: true
     },
+
     password:{
         type: String,
         required: true,
         minlength: [6, "khalaas... your password is too weak"]
-    }
+    },
+    phoneNumber: {
+        type: String,
+        // required: true,
+        minlength: [3, "Last name must be more than 3 characters"],
+        maxlength: [20, "This is too much man..... Chill!!!"]
+    },
+    block: {
+        type: String,
+        required: true,
+        minlength: [3, "Last name must be more than 3 characters"],
+        maxlength: [20, "This is too much man..... Chill!!!"]
+    },
+    street: {
+        type: String,
+        required: true,
+        minlength: [3, "Last name must be more than 3 characters"],
+        maxlength: [20, "This is too much man..... Chill!!!"]
+    },
+    house: {
+        type: String,
+        required: true,
+        minlength: [3, "Last name must be more than 3 characters"],
+        maxlength: [20, "This is too much man..... Chill!!!"]
+    },
+    
 
 
 },

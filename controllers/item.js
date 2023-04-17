@@ -16,13 +16,15 @@ exports.item_index_get = (req, res) => {
 
 // HTTP Adding Item
 
-exports.item_create_get = (req, res) =>{
+exports.item_create_get = (req, res) => {
     res.render("item/add");
 }
 
 exports.item_create_post = (req, res) => {
     console.log(req.body);
     let item = new Item(req.body);
+    // const imageURL = req.file.path.replace("public", "")
+    // item.imageURL = imageURL
 
     // Save item
     item.save()
@@ -74,7 +76,7 @@ exports.item_update_put = (req, res) => {
   exports.item_delete_get = (req, res) => {
     console.log(req.query.id);
     Item.findByIdAndDelete(req.query.id)
-    .then((Item)=>{
+    .then((item)=>{
         res.json({item})
     })
     .catch(err => {

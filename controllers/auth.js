@@ -28,8 +28,7 @@ exports.auth_signup_post = (req, res) => {
   user.password = hash;
 
   // Save user
-  user
-    .save()
+  user.save()
     .then(() => {
       // res.redirect("/auth/signin");
       res.json({ message: "User Created Successfully" });
@@ -38,6 +37,7 @@ exports.auth_signup_post = (req, res) => {
       console.log(err);
       res.send("Please try again later.");
     });
+    console.log(req.body)
 };
 
 // HTTP GET - Signin Route - To load the signin form
@@ -67,7 +67,7 @@ exports.auth_signin_post = async (req, res) => {
 
     // Compare Password
     const isMatch = await bcrypt.compareSync(password, user.password);
-    console.log(password);
+    // console.log(password);
     console.log(user.password);
 
     if (!isMatch) {

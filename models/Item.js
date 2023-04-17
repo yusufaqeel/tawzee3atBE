@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 
 // Item Schema
 const itemSchema = mongoose.Schema({
-    imageURL: {type:String},
     title: {type:String},
     des: {type:String},
     category: {type:String},
-    price: {type:String},
-    quantity: Number
+    price: {type:Number},
+    quantity: {type:Number},
+    publicId: {type: String},
+    imageUrl: {type: String}
 },
 { timestamps: true}) // createdAt and updatedAt
 

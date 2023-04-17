@@ -11,6 +11,12 @@ const port = process.env.PORT;
 // Initailze Express
 const app = express();
 
+// Initialize Cors
+const cors = require("cors");
+
+// Mount Cors
+app.use(cors());
+
 // Look for all the static files in public folder (css, JS, Images, Audio, Videos).
 app.use(express.static("public"));
 
@@ -43,17 +49,15 @@ app.use(function(req, res, next){
 
 // Import Routes
 const indexRoute = require('./routes/index');
-const articleRoute = require('./routes/articles');
-const authorRoute = require('./routes/authors');
 const authRoute = require('./routes/auth');
 const itemRoute = require('./routes/items');
+const imageRoute = require('./routes/image');
 
 // Mount Routes
 app.use('/', indexRoute);
-app.use('/', articleRoute);
-app.use('/', authorRoute);
 app.use('/', authRoute);
 app.use('/', itemRoute);
+app.use('/', imageRoute);
 
 // Node.js to look in a folder views for all the ejs files.
 app.set("view engine", "ejs");
